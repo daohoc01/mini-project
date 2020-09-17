@@ -29,8 +29,9 @@ class StudentModel extends Model
 	// định nghĩa cho hàm detail sử dụng dữ liệu database thong qua $id
 	public function detail($id) 
 	{
-		//Gia su rang ta load data tu CSDL
+		//Giả sử rằng ta load data từ CSDL
 		$allStudent = $this->list();
+		// trả về giá trị $allStudent
 		return $allStudent[$id];
 	}
 }

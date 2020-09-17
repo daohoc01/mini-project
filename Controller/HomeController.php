@@ -1,15 +1,15 @@
 <?php
 // gọi file contreller, nêu đã có từ trước thì không hiển thị phần nội dung gọi sau
-include_once("Contreller.php");
+include_once("Controller.php");
 // hướng đối tượng dùng tính kế thừa
 class HomeController extends Controller
 {
     //định nghĩa hàm invoke
     public function invoke()
     {
-        if(isset($_GET[`view`]))
+        if(isset($_GET['view']))
         {
-            include_once("../View/Layuots/header.html");
+            include_once("../View/Layouts/header.html");
             // khối lệnh điều khiển
             switch($_GET['view'])
             {
@@ -52,13 +52,13 @@ class HomeController extends Controller
     public function dashboard()
     {
         //gọi file hiển thị dashboard
-        include_once("../View/Home/dashboard.html");
+        include_once("../View/Home/Dashboard.html");
     }
     // định nghĩa hàm login
     public function login()
     {
         //gọi file hiển thị login
-        include_once("../View/home/login.html");
+        include_once("../View/Home/Login.html");
     }
     //định nghĩa hàm loginPost
     public function loginPost()
@@ -74,7 +74,7 @@ class HomeController extends Controller
     public function register()
     {
         // gọi file hiển thị register
-        include_once("../View/Home/register,html");
+        include_once("../View/Home/Register.html");
     }
     // định nghĩa hàm registerPost
     public function registerPost()
@@ -87,6 +87,7 @@ class HomeController extends Controller
         }
     } 
 }
+
 // hướng đối tương-tính đóng gói
 // thay đổi quyền truy cập cho $homeController và giá trị sang invoke() và invokePost()
 $homeController = new HomeController();
